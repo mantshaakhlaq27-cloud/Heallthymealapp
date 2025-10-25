@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Results - Healthy Plate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="results-header">
+        <div class="container">
+            <a href="/" class="back-link">← Back to Home</a>
+            <h1 class="results-title">Your Recipe Results</h1>
+            <p class="results-subtitle">
+                Based on your ingredients: <strong>{{ ingredients }}</strong>
+            </p>
+        </div>
+    </header>
+
+    <!-- Results Section -->
+    <div class="results-section">
+        <div class="container">
+            {% if recipes and recipes|length > 0 %}
+                <p class="results-count">Found {{ recipes|length }} delicious recipes for you!</p>
+                
+                <div class="recipes-grid">
+                    {% for recipe in recipes %}
+                    <div class="recipe-card">
+                        <!-- Recipe Image -->
+                        <div class="recipe-image-container">
+                            <img src="{{ recipe.image }}" alt="{{ recipe.name }}" class="recipe-image">
+                            <div class="recipe-overlay">
+                                <span class="recipe-tag">🌟 Healthy Choice</span>
+                            </div>
+                        </div>
+
+                        <!-- Recipe Content -->
+                        <div class="recipe-content">
+                            <h2 class="recipe-name">{{ recipe.name }}</h2>
+                            
+                            <!-- Description -->
+                            <div class="recipe-description">
+                                {% if recipe.description %}
+                                    {{ recipe.description|striptags|truncate(150) }}
+                                {% else %}
+                                    A delicious and nutritious meal option!
+                                {% endif %}
+                            </div>
+
+                            <!-- Nutrition Info -->
+                            <div class="nutrition-grid">
+                                <div class="nutrition-item">
+                                    <span class="nutrition-icon">🔥</span>
+                                    <div class="nutrition-details">
+                                        <span class="nutrition-value">{{ recipe.calories }}</span>
+                                        <span class="nutrition-label">Calories</span>
+                                    </div>
+                                </div>
+                                <div class="nutrition-item">
+                                    <span class="nutrition-icon">💪</span>
+                                    <div class="nutrition-details">
+                                        <span class="nutrition-value">{{ recipe.protein }}g</span>
+                                        <span class="nutrition-label">Protein</span>
+                                    </div>
+                                </div>
+                                <div class="nutrition-item">
+                                    <span class="nutrition-icon">🥑</span>
+                                    <div class="nutrition-details">
+                                        <span class="nutrition-value">{{ recipe.fat }}g</span>
+                                        <span class="nutrition-label">Fat</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Health Benefits -->
+                            <div class="health-benefits">
+                                <h3 class="benefits-title">Health Benefits:</h3>
+                                <ul class="benefits-list">
+                                    {% for benefit in recipe.health_benefits %}
+                                        <li class="benefit-item">✓ {{ benefit }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+
+                            <!-- Video Tutorial Button -->
+                            <div class="recipe-actions">
+                                <a href="{{ recipe.youtube_url }}" target="_blank" class="video-button">
+                                    🎥 Watch Tutorial
+                                </a>
+                                {% if recipe.source_url and recipe.source_url != '#' %}
+                                <a href="{{ recipe.source_url }}" target="_blank" class="recipe-button">
+                                    📖 Full Recipe
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <!-- No Results -->
+                <div class="no-results">
+                    <div class="no-results-icon">😕</div>
+                    <h2 class="no-results-title">No Recipes Found</h2>
+                    <p class="no-results-text">
+                        We couldn't find any recipes matching your ingredients. 
+                        Try different ingredients or add more items!
+                    </p>
+                    <a href="/" class="try-again-button">Try Again</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Search Again Section -->
+    <div class="search-again-section">
+        <div class="container">
+            <h2 class="section-title">Want to Try Different Ingredients?</h2>
+            <form action="/search" method="POST" class="search-form-inline">
+                <input 
+                    type="text" 
+                    name="ingredients" 
+                    class="ingredient-input-inline"
+                    placeholder="Enter new ingredients..."
+                    required
+                >
+                <button type="submit" class="submit-button-inline">
+                    Search Again 🔍
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                © 2025 Healthy Plate - Eat Well, Live Well 🌟
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

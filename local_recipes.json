@@ -1,0 +1,206 @@
+[
+  {
+    "name": "Banana Oat Pancakes",
+    "image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=300&fit=crop",
+    "description": "Fluffy, healthy pancakes made with bananas and oats. Perfect for a nutritious breakfast that keeps you energized throughout the morning.",
+    "calories": 320,
+    "protein": 12,
+    "fat": 8,
+    "health_benefits": [
+      "High in fiber",
+      "Energy boosting",
+      "Heart healthy",
+      "No refined sugar"
+    ],
+    "youtube_url": "https://www.youtube.com/results?search_query=banana+oat+pancakes+recipe",
+    "ingredients": ["banana", "oats", "eggs", "milk", "cinnamon"],
+    "source_url": "#"
+  },
+  {
+    "name": "Grilled Chicken & Rice Bowl",
+    "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop",
+    "description": "A protein-packed bowl with tender grilled chicken, fluffy rice, and fresh vegetables. A complete meal that's both satisfying and nutritious.",
+    "calories": 450,
+    "protein": 35,
+    "fat": 12,
+    "health_benefits": [
+      "High protein",
+      "Muscle building",
+      "Balanced macros",
+      "Low fat"
+    ],
+    "youtube_url": "https://www.youtube.com/results?search_query=grilled+chicken+rice+bowl+recipe",
+    "ingredients": ["chicken", "rice", "broccoli", "carrots", "soy sauce"],
+    "source_url": "#"
+  },
+  {
+    "name": "Vegetable Stir-Fry",
+    "image": "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&h=300&fit=crop",
+    "description": "Colorful mix of fresh vegetables stir-fried to perfection with aromatic spices. Quick, easy, and packed with vitamins.",
+    "calories": 280,
+    "protein": 8,
+    "fat": 10,
+    "health_benefits": [
+      "Rich in vitamins",
+      "Low calorie",
+      "High in antioxidants",
+      "Vegetarian-friendly"
+    ],
+    "youtube_url": "https://www.youtube.com/results?search_query=vegetable+stir+fry+recipe",
+    "ingredients": ["broccoli", "carrots", "bell peppers", "garlic", "ginger", "soy sauce"],
+    "source_url": "#"
+  },
+  {
+    "name": "Quinoa Salad Bowl",
+    "image": "https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=400&h=300&fit=crop",
+    "description": "Refreshing quinoa salad loaded with fresh vegetables, herbs, and a tangy lemon dressing. Perfect for lunch or a light dinner.",
+    "calories": 350,
+    "protein": 14,
+    "fat": 15,
+    "health_benefits": [
+      "Complete protein",
+      "Gluten-free",
+      "Rich in fiber",
+      "Vegan-friendly"
+    ],
+    "youtube_url": "https://www.youtube.com/results?search_query=quinoa+salad+bowl+recipe",
+    "ingredients": ["quinoa", "tomatoes", "cucumber", "lemon", "olive oil", "parsley"],
+    "source_url": "#"
+  },
+  {
+    "name": "Salmon with Roasted Vegetables",
+    "image": "https://images.unsplash.com/photo-1485921325833-c519f76c4927?w=400&h=300&fit=crop",
+    "description": "Perfectly baked salmon fillet served with a medley of roasted seasonal vegetables. Rich in omega-3 fatty acids and nutrients.",
+    "calories": 420,
+    "protein": 38,
+    "fat": 22,
+    "health_benefits": [
+      "Rich in Omega-3",
+      "Heart healthy",
+      "Brain boosting",
+      "Anti-inflammatory"
+    ],
+    "youtube_url": "https://www.youtube.com/results?search_query=salmon+roasted+vegetables+recipe",
+    "ingredients": ["salmon", "broccoli", "carrots", "olive oil", "lemon", "garlic"],
+    "source_url": "#"
+  },
+  {
+    "name": "Greek Yogurt Parfait",
+    "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&h=300&fit=crop",
+    "description": "Layered Greek yogurt with fresh berries, honey, and granola. A delicious and protein-rich breakfast or snack option.",
+    "calories": 290,
+    "protein": 18,
+    "fat": 8,
+    "health_benefits": [
+      "Probiotic rich",
+      "High protein",
+      "Gut health",
+      "Calcium rich"
+    ],
+    "youtube_url": "https://www.youtube.com/results?search_query=greek+yogurt+parfait+recipe",
+    "ingredients": ["greek yogurt", "strawberries", "blueberries", "honey", "granola"],
+    "source_url": "#"
+  },
+  {
+    "name": "Lentil Soup",
+    "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&h=300&fit=crop",
+    "description": "Hearty and comforting lentil soup packed with vegetables and spices. Perfect for a warming, nutritious meal.",
+    "calories": 310,
+    "protein": 16,
+    "fat": 6,
+    "health_benefits": [
+      "High in fiber",
+      "Plant-based protein",
+      "Iron rich",
+      "Vegan-friendly"
+    ],
+    "youtube_url": "https://www.youtube.com/results?search_query=lentil+soup+recipe",
+    "ingredients": ["lentils", "carrots", "celery", "onion", "garlic", "tomatoes"],
+    "source_url": "#"
+  },
+  {
+    "name": "Sweet Potato & Black Bean Tacos",
+    "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&h=300&fit=crop",
+    "description": "Delicious vegetarian tacos filled with roasted sweet potatoes and seasoned black beans. Topped with fresh avocado and lime.",
+    "calories": 380,
+    "protein": 14,
+    "fat": 12,
+    "health_benefits": [
+      "High in fiber",
+      "Vegetarian-friendly",
+      "Complex carbs",
+      "Rich in vitamins"
+    ],
+    "youtube_url": "https://www.youtube.com/results?search_query=sweet+potato+black+bean+tacos+recipe",
+    "ingredients": ["sweet potato", "black beans", "avocado", "lime", "cumin", "tortillas"],
+    "source_url": "#"
+  },
+  {
+    "name": "Spinach & Mushroom Omelette",
+    "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=400&h=300&fit=crop",
+    "description": "Fluffy omelette filled with sautéed spinach and mushrooms. A protein-rich breakfast that's ready in minutes.",
+    "calories": 260,
+    "protein": 20,
+    "fat": 18,
+    "health_benefits": [
+      "High protein",
+      "Iron rich",
+      "Low carb",
+      "Vitamin D"
+    ],
+    "youtube_url": "https://www.youtube.com/results?search_query=spinach+mushroom+omelette+recipe",
+    "ingredients": ["eggs", "spinach", "mushrooms", "cheese", "butter", "onion"],
+    "source_url": "#"
+  },
+  {
+    "name": "Chickpea Curry",
+    "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&h=300&fit=crop",
+    "description": "Creamy and flavorful chickpea curry with aromatic spices. Served with rice or naan for a satisfying meal.",
+    "calories": 340,
+    "protein": 15,
+    "fat": 10,
+    "health_benefits": [
+      "Plant-based protein",
+      "High in fiber",
+      "Vegan-friendly",
+      "Anti-inflammatory spices"
+    ],
+    "youtube_url": "https://www.youtube.com/results?search_query=chickpea+curry+recipe",
+    "ingredients": ["chickpeas", "tomatoes", "onion", "garlic", "ginger", "curry powder", "coconut milk"],
+    "source_url": "#"
+  },
+  {
+    "name": "Berry Smoothie Bowl",
+    "image": "https://images.unsplash.com/photo-1590301157890-4810ed352733?w=400&h=300&fit=crop",
+    "description": "Thick and creamy smoothie bowl topped with fresh berries, nuts, and seeds. A refreshing and nutritious breakfast.",
+    "calories": 310,
+    "protein": 10,
+    "fat": 8,
+    "health_benefits": [
+      "Antioxidant rich",
+      "Vitamin C boost",
+      "Energy enhancing",
+      "Digestive health"
+    ],
+    "youtube_url": "https://www.youtube.com/results?search_query=berry+smoothie+bowl+recipe",
+    "ingredients": ["strawberries", "blueberries", "banana", "yogurt", "honey", "granola"],
+    "source_url": "#"
+  },
+  {
+    "name": "Baked Cod with Herbs",
+    "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&h=300&fit=crop",
+    "description": "Tender baked cod seasoned with fresh herbs and lemon. A light and healthy seafood option that's easy to prepare.",
+    "calories": 220,
+    "protein": 32,
+    "fat": 6,
+    "health_benefits": [
+      "Low calorie",
+      "High protein",
+      "Omega-3 rich",
+      "Heart healthy"
+    ],
+    "youtube_url": "https://www.youtube.com/results?search_query=baked+cod+herbs+recipe",
+    "ingredients": ["cod", "lemon", "garlic", "parsley", "olive oil", "thyme"],
+    "source_url": "#"
+  }
+]

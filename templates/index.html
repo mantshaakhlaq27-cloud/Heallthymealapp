@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Plate - Smart Meal Suggestions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">🍽️ Healthy Plate</h1>
+                <p class="hero-subtitle">Your Smart Meal Suggestion Companion</p>
+                <p class="hero-description">
+                    Turn your available ingredients into delicious, healthy meals! 
+                    Simply enter what you have in your kitchen, and we'll suggest 
+                    nutritious recipes complete with calorie counts, nutritional info, 
+                    and video tutorials.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Section -->
+    <div class="search-section">
+        <div class="container">
+            <div class="search-card">
+                <h2 class="section-title">What's in Your Kitchen?</h2>
+                <form action="/search" method="POST" class="search-form">
+                    <div class="input-group">
+                        <label for="ingredients" class="input-label">
+                            Enter your ingredients (separated by commas)
+                        </label>
+                        <input 
+                            type="text" 
+                            id="ingredients" 
+                            name="ingredients" 
+                            class="ingredient-input"
+                            placeholder="e.g., chicken, rice, broccoli, garlic"
+                            required
+                        >
+                        <p class="input-hint">
+                            💡 Tip: The more ingredients you add, the better the suggestions!
+                        </p>
+                    </div>
+                    <button type="submit" class="submit-button">
+                        Find Healthy Recipes 🔍
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Healthy Plate?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🥗</div>
+                    <h3 class="feature-title">Nutritious Recipes</h3>
+                    <p class="feature-description">
+                        Get meal suggestions that are not only delicious but also 
+                        packed with nutrients your body needs.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Detailed Nutrition Info</h3>
+                    <p class="feature-description">
+                        View complete nutritional breakdown including calories, 
+                        protein, and fat content for every recipe.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎥</div>
+                    <h3 class="feature-title">Video Tutorials</h3>
+                    <p class="feature-description">
+                        Learn to cook with step-by-step video tutorials from 
+                        YouTube integrated into every recipe.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💚</div>
+                    <h3 class="feature-title">Health Benefits</h3>
+                    <p class="feature-description">
+                        Discover the health benefits of each meal, including 
+                        dietary preferences and wellness advantages.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Quick & Easy</h3>
+                    <p class="feature-description">
+                        Find recipes in seconds based on what you already have, 
+                        reducing food waste and saving time.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3 class="feature-title">Dietary Options</h3>
+                    <p class="feature-description">
+                        Filter for vegetarian, vegan, gluten-free, and other 
+                        dietary preferences to match your lifestyle.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works Section -->
+    <div class="how-it-works-section">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Enter Ingredients</h3>
+                    <p class="step-description">
+                        Type in the ingredients you have available in your kitchen.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Get Suggestions</h3>
+                    <p class="step-description">
+                        Our smart system finds the best healthy recipes for you.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Start Cooking</h3>
+                    <p class="step-description">
+                        Follow the recipe and watch video tutorials to create your meal.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                © 2025 Healthy Plate - Eat Well, Live Well 🌟
+            </p>
+            <p class="footer-subtext">
+                Made with ❤️ for healthy living
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
