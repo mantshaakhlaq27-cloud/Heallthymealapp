@@ -54,6 +54,70 @@
         </div>
     </div>
 
+    <!-- Recommended Meals Section -->
+    <div class="recommended-section">
+        <div class="container">
+            <div class="recommended-header">
+                <h2 class="section-title">✨ Today's Healthy Recommendations</h2>
+                <p class="recommended-subtitle">
+                    Not sure what to cook? Try these nutritious meal ideas!
+                </p>
+            </div>
+            
+            <div class="recommended-grid">
+                {% for recipe in recommended_recipes %}
+                <div class="recommended-card">
+                    <div class="recommended-image-container">
+                        <img src="{{ recipe.image }}" alt="{{ recipe.name }}" class="recommended-image">
+                        <div class="recommended-badge">
+                            <span class="badge-icon">⭐</span>
+                            <span class="badge-text">Recommended</span>
+                        </div>
+                    </div>
+                    
+                    <div class="recommended-content">
+                        <h3 class="recommended-name">{{ recipe.name }}</h3>
+                        <p class="recommended-description">
+                            {{ recipe.description|striptags|truncate(80) }}
+                        </p>
+                        
+                        <div class="recommended-nutrition">
+                            <div class="nutrition-badge">
+                                <span class="badge-value">{{ recipe.calories }}</span>
+                                <span class="badge-label">cal</span>
+                            </div>
+                            <div class="nutrition-badge">
+                                <span class="badge-value">{{ recipe.protein }}g</span>
+                                <span class="badge-label">protein</span>
+                            </div>
+                            <div class="nutrition-badge">
+                                <span class="badge-value">{{ recipe.fat }}g</span>
+                                <span class="badge-label">fat</span>
+                            </div>
+                        </div>
+                        
+                        <div class="recommended-benefits">
+                            {% for benefit in recipe.health_benefits[:2] %}
+                                <span class="benefit-tag">{{ benefit }}</span>
+                            {% endfor %}
+                        </div>
+                        
+                        <a href="{{ recipe.youtube_url }}" target="_blank" class="recommended-button">
+                            Watch Recipe 🎥
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <div class="refresh-recommendations">
+                <button onclick="location.reload()" class="refresh-button">
+                    🔄 Show Me Different Recipes
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Features Section -->
     <div class="features-section">
         <div class="container">

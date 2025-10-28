@@ -3,6 +3,7 @@ from flask import Flask, render_template, request
 import requests
 import json
 import os
+import random
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -12,10 +13,12 @@ app = Flask(__name__)
 SPOONACULAR_API_KEY = os.environ.get('SPOONACULAR_API_KEY', 'dc1cd0f108e64554be4de5bed590e37f')
 SPOONACULAR_BASE_URL = 'https://api.spoonacular.com/recipes'
 
-# Home route - displays the main page
+# Home route - displays the main page with auto recommendations
 @app.route('/')
 def index():
-    return render_template('index.html')
+    # Get random recipe recommendations for the home page
+    recommended_recipes = get_recommended_recipes()
+    return render_template('index.html', recommended_recipes=recommended_recipes)
 
 # Search route - handles ingredient submission and fetches recipes
 @app.route('/search', methods=['POST'])
@@ -31,6 +34,73 @@ def search():
         recipes = fetch_from_local_dataset(ingredients)
     
     return render_template('result.html', recipes=recipes, ingredients=ingredients)
+
+# Function to get recommended recipes for home page
+def get_recommended_recipes():
+    """
+    Gets random healthy recipe recommendations to display on home page
+    Returns a list of 3 recommended recipes
+    """
+    try:
+        # Load local recipes database
+        with open('local_recipes.json', 'r') as file:
+            all_recipes = json.load(file)
+        
+        # Select 3 random recipes
+        if len(all_recipes) >= 3:
+            recommended = random.sample(all_recipes, 3)
+        else:
+            recommended = all_recipes
+        
+        return recommended
+    
+    except FileNotFoundError:
+        # Return default recommendations if file not found
+        return get_default_recommendations()
+    except Exception as e:
+        print(f"Error loading recommendations: {e}")
+        return get_default_recommendations()
+
+# Function to provide default recommendations
+def get_default_recommendations():
+    """
+    Returns default recipe recommendations
+    """
+    return [
+        {
+            'name': 'Banana Oat Pancakes',
+            'image': 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=300&fit=crop',
+            'description': 'Fluffy, healthy pancakes made with bananas and oats.',
+            'calories': 320,
+            'protein': 12,
+            'fat': 8,
+            'health_benefits': ['High in fiber', 'Energy boosting', 'Heart healthy'],
+            'youtube_url': 'https://www.youtube.com/results?search_query=banana+oat+pancakes+recipe',
+            'ingredients': ['banana', 'oats', 'eggs', 'milk']
+        },
+        {
+            'name': 'Grilled Chicken & Rice Bowl',
+            'image': 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop',
+            'description': 'A protein-packed bowl with tender grilled chicken and fluffy rice.',
+            'calories': 450,
+            'protein': 35,
+            'fat': 12,
+            'health_benefits': ['High protein', 'Muscle building', 'Balanced macros'],
+            'youtube_url': 'https://www.youtube.com/results?search_query=grilled+chicken+rice+bowl+recipe',
+            'ingredients': ['chicken', 'rice', 'broccoli', 'carrots']
+        },
+        {
+            'name': 'Quinoa Salad Bowl',
+            'image': 'https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?w=400&h=300&fit=crop',
+            'description': 'Refreshing quinoa salad with fresh vegetables and lemon dressing.',
+            'calories': 350,
+            'protein': 14,
+            'fat': 15,
+            'health_benefits': ['Complete protein', 'Gluten-free', 'Rich in fiber'],
+            'youtube_url': 'https://www.youtube.com/results?search_query=quinoa+salad+bowl+recipe',
+            'ingredients': ['quinoa', 'tomatoes', 'cucumber', 'lemon']
+        }
+    ]
 
 # Function to fetch recipes from Spoonacular API
 def fetch_from_spoonacular(ingredients):
@@ -202,4 +272,3 @@ def get_default_recipes():
 # Run the Flask app
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
-

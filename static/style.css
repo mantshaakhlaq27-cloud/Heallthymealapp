@@ -540,6 +540,241 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
+/* Recommended Meals Section */
+.recommended-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.recommended-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.recommended-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+.recommended-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    margin-bottom: 50px;
+}
+
+.recommended-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.recommended-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.25);
+}
+
+.recommended-image-container {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.recommended-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.recommended-card:hover .recommended-image {
+    transform: scale(1.1);
+}
+
+.recommended-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.badge-icon {
+    font-size: 1rem;
+}
+
+.badge-text {
+    font-size: 0.85rem;
+}
+
+.recommended-content {
+    padding: 25px;
+}
+
+.recommended-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.recommended-description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.recommended-nutrition {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding: 15px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+}
+
+.nutrition-badge {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+    background: white;
+    border-radius: 8px;
+}
+
+.badge-value {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #667eea;
+}
+
+.badge-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+.recommended-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.benefit-tag {
+    background: linear-gradient(135deg, #e0f7e9 0%, #c8f0d9 100%);
+    color: #2d6a4f;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.recommended-button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.recommended-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(135deg, #5568d3 0%, #6a3f8f 100%);
+}
+
+.refresh-recommendations {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.refresh-button {
+    padding: 16px 40px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    background: white;
+    color: #667eea;
+    border: 3px solid #667eea;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.refresh-button:hover {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Animation for recommended cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger animation for cards */
+.recommended-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.recommended-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.recommended-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .recommended-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .recommended-nutrition {
+        flex-direction: row;
+    }
+    
+    .nutrition-badge {
+        padding: 10px 5px;
+    }
+    
+    .badge-value {
+        font-size: 1.1rem;
+    }
+}
 
 /* Animations */
 @keyframes fadeInDown {
